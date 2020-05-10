@@ -112,6 +112,9 @@ class FlutterEmailSenderPlugin(private val registrar: Registrar)
             }
         }
 
+        val emailSelectorIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))
+        intent.setSelector( emailSelectorIntent );
+        
         val packageManager = activity.packageManager
 
         if (packageManager.resolveActivity(intent, 0) != null) {
