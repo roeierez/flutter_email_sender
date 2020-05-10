@@ -101,7 +101,7 @@ class FlutterEmailSenderPlugin(private val registrar: Registrar)
                 val uris = attachmentPaths.map {
                     FileProvider.getUriForFile(activity, registrar.context().packageName + ".file_provider", File(it))
                 }
-                intent.type = "vnd.android.cursor.dir/email"
+                //intent.type = "vnd.android.cursor.dir/email"
                 if (uris.count() == 1) {
                     intent.action = Intent.ACTION_SEND
                     intent.putExtra(Intent.EXTRA_STREAM, uris.first())
